@@ -6,6 +6,7 @@ import { User } from './entities/user.entity';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { Role } from 'src/core/roles/entities/role.entity';
+import { Role as EnumRole } from '../../common/enum/role.enum';
 
 
 @Injectable()
@@ -28,12 +29,11 @@ export class UsersService {
 
     const hashPass = await bcrypt.hash(req.password, 10);
 
-    const resultRole = await this.rolesRepository.findOne({ where: { role_id: req.role_id } });
+    const resultRole = req.role_id ? await this.rolesRepository.findOne({ where: { role_id: req.role_id } }) : await this.rolesRepository.findOne({ where: { role_unique_name: EnumRole.User } })
 
     if (!resultRole) {
       throw new HttpException("Creating user failed", HttpStatus.INTERNAL_SERVER_ERROR);
     }
-
 
     const result = await this.usersRepository.save({ user_name: req.user_name, email: req.email, password: hashPass, role: resultRole });
 
@@ -41,13 +41,14 @@ export class UsersService {
       throw new HttpException("Creating user failed", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+
     return { message: "User created successfully" };
   }
 
 
   async login(req: LoginUser): Promise<{ access_token: string }> {
 
-    const user = await this.usersRepository.findOne({ where: { email: req.email } });
+    const user = await this.usersRepository.findOne({ where: { email: req.email }, relations: ["role"] });
 
     if (!user) {
       throw new HttpException("User does not exists", HttpStatus.INTERNAL_SERVER_ERROR);
@@ -59,7 +60,7 @@ export class UsersService {
       throw new HttpException("Invalid password", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    const payload = { sub: user.user_id };
+    const payload = { sub: user.user_id, role: user.role.role_unique_name };
 
 
     return { access_token: await this.jwtService.signAsync(payload) };

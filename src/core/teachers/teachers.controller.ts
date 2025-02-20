@@ -3,6 +3,8 @@ import { TeachersService } from './teachers.service';
 import { CreateTeacherDto } from './dto/create-teacher.dto';
 import { UpdateTeacherDto } from './dto/update-teacher.dto';
 import { JwtAuthGuard } from 'src/middleware/jwt/jwt.guard';
+import { Roles } from 'src/common/decorator/roles.decorator';
+import { Role } from 'src/common/enum/role.enum';
 
 @Controller('api/v1/teachers')
 export class TeachersController {
@@ -10,6 +12,7 @@ export class TeachersController {
 
   @Post()
   @UseGuards(JwtAuthGuard)
+  @Roles(Role.Admin)
   async create(@Body() createTeacherDto: CreateTeacherDto, @Request() req) {
 
     createTeacherDto.user_id = req.user.user_id
@@ -31,12 +34,14 @@ export class TeachersController {
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard)
+  @Roles(Role.Admin)
   async update(@Param('id') id: string, @Body() updateTeacherDto: UpdateTeacherDto) {
     return await this.teachersService.update(id, updateTeacherDto);
   }
 
   @Delete(':id')
   @UseGuards(JwtAuthGuard)
+  @Roles(Role.Admin)
   async remove(@Param('id') id: string) {
     return await this.teachersService.remove(id);
   }

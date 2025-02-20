@@ -13,7 +13,6 @@ export class RegisterUser {
     @MinLength(6)
     password: string;
 
-    @IsNotEmpty()
     role_id: string;
 }
 

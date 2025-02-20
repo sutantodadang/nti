@@ -20,6 +20,9 @@ import { Enrollment } from './core/enrollments/entities/enrollment.entity';
 import { JwtStrategy } from './middleware/jwt/jwt.strategy';
 import { PassportModule } from '@nestjs/passport';
 import { LoggerMiddleware } from './middleware/logging/log.middleware';
+import { RolesGuard } from './middleware/roles/roles.guard';
+import { APP_GUARD } from '@nestjs/core';
+import { JwtAuthGuard } from './middleware/jwt/jwt.guard';
 
 @Module({
   imports: [
@@ -48,7 +51,7 @@ import { LoggerMiddleware } from './middleware/logging/log.middleware';
     PassportModule
   ],
   controllers: [],
-  providers: [JwtStrategy],
+  providers: [JwtStrategy, { provide: APP_GUARD, useClass: JwtAuthGuard }, { provide: APP_GUARD, useClass: RolesGuard }],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

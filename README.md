@@ -76,7 +76,7 @@ api doc using postman
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"email\": \"dadang@mail.com\",\r\n    \"user_name\": \"dadang\",\r\n    \"password\": \"test1234\",\r\n    \"role_id\": \"8f373da2-220d-4123-b54e-5ffc2fa7c999\"\r\n}",
+              "raw": "{\r\n    \"email\": \"dadanguser@mail.com\",\r\n    \"user_name\": \"dadang user\",\r\n    \"password\": \"test1234\",\r\n    \"role_id\": null\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -129,13 +129,28 @@ api doc using postman
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"role_name\":\"Admin\",\r\n    \"role_unique_name\":\"ADMIN\"\r\n}",
+              "raw": "{\r\n    \"role_name\":\"User\",\r\n    \"role_unique_name\":\"USER\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
               }
             },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/roles",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "roles"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find all roles",
+          "request": {
+            "method": "GET",
+            "header": [],
             "url": {
               "raw": "http://localhost:3000/api/v1/roles",
               "protocol": "http",

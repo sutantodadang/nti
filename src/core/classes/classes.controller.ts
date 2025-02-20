@@ -3,6 +3,8 @@ import { ClassesService } from './classes.service';
 import { CreateClassDto } from './dto/create-class.dto';
 import { UpdateClassDto } from './dto/update-class.dto';
 import { JwtAuthGuard } from 'src/middleware/jwt/jwt.guard';
+import { Roles } from 'src/common/decorator/roles.decorator';
+import { Role } from 'src/common/enum/role.enum';
 
 @Controller('api/v1/classes')
 export class ClassesController {
@@ -10,6 +12,7 @@ export class ClassesController {
 
   @Post()
   @UseGuards(JwtAuthGuard)
+  @Roles(Role.Admin)
   async create(@Body() createClassDto: CreateClassDto) {
     return await this.classesService.create(createClassDto);
   }
@@ -28,12 +31,14 @@ export class ClassesController {
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard)
+  @Roles(Role.Admin)
   async update(@Param('id') id: string, @Body() updateClassDto: UpdateClassDto) {
     return await this.classesService.update(id, updateClassDto);
   }
 
   @Delete(':id')
   @UseGuards(JwtAuthGuard)
+  @Roles(Role.Admin)
   async remove(@Param('id') id: string) {
     return await this.classesService.remove(id);
   }

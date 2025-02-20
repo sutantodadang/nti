@@ -13,8 +13,8 @@ export class RolesController {
   }
 
   @Get()
-  findAll() {
-    return this.rolesService.findAll();
+  async findAll() {
+    return await this.rolesService.findAll();
   }
 
   @Get(':id')
