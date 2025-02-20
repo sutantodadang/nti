@@ -1,99 +1,890 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# nti
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Installation
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+To run this project need:
 
-## Description
+1. [NodeJs](https://nodejs.org/en/download)
+2. [Pnpm](https://pnpm.io/installation)
+3. [Postman](https://www.postman.com/downloads/)
+4. [Docker](https://docs.docker.com/engine/install/)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+run this command on terminal it will download dependencies
 
 ## Project setup
 
 ```bash
-$ npm install
+$ pnpm install
 ```
 
 ## Compile and run the project
 
 ```bash
 # development
-$ npm run start
+$ pnpm run start
 
 # watch mode
-$ npm run start:dev
+$ pnpm run start:dev
 
 # production mode
-$ npm run start:prod
+$ pnpm run start:prod
 ```
 
 ## Run tests
 
 ```bash
 # unit tests
-$ npm run test
+$ pnpm run test
 
 # e2e tests
-$ npm run test:e2e
+$ pnpm run test:e2e
 
 # test coverage
-$ npm run test:cov
+$ pnpm run test:cov
 ```
 
 ## Deployment
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+using docker compose
 
 ```bash
-$ npm install -g mau
-$ mau deploy
+$ docker compose up -d
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## API Reference
 
-## Resources
+api doc using postman
 
-Check out a few resources that may come in handy when working with NestJS:
+#### postman
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+```json
+{
+  "info": {
+    "_postman_id": "242932d2-8da7-4202-b0b8-98fed765da24",
+    "name": "nti",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14623263"
+  },
+  "item": [
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"dadang@mail.com\",\r\n    \"user_name\": \"dadang\",\r\n    \"password\": \"test1234\",\r\n    \"role_id\": \"8f373da2-220d-4123-b54e-5ffc2fa7c999\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"dadang@mail.com\",\r\n    \"password\":\"test1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "login"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "roles",
+      "item": [
+        {
+          "name": "create role",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"role_name\":\"Admin\",\r\n    \"role_unique_name\":\"ADMIN\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/roles",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "roles"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "teacher",
+      "item": [
+        {
+          "name": "add teacher",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjU3OGUzZS0xMzEyLTRmYzktYmVmOS00OWRmMTg2ZDdkODAiLCJpYXQiOjE3NDAwMTMxNTEsImV4cCI6MTc0MDA5OTU1MX0.0QcsAo4uChPok3rvlGUi-z6KP1wT3czhp-wbjgH3O00",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"teacher_name\": \"dadang\",\r\n    \"specialization\": \"geo\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/teachers",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "teachers"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find all teachers",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjU3OGUzZS0xMzEyLTRmYzktYmVmOS00OWRmMTg2ZDdkODAiLCJpYXQiOjE3NDAwMTMxNTEsImV4cCI6MTc0MDA5OTU1MX0.0QcsAo4uChPok3rvlGUi-z6KP1wT3czhp-wbjgH3O00",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/teachers",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "teachers"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find teacher by id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjU3OGUzZS0xMzEyLTRmYzktYmVmOS00OWRmMTg2ZDdkODAiLCJpYXQiOjE3NDAwMTMxNTEsImV4cCI6MTc0MDA5OTU1MX0.0QcsAo4uChPok3rvlGUi-z6KP1wT3czhp-wbjgH3O00",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/teachers/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "teachers", ":id"],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "disabled": true
+                }
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "d7420563-d18e-404a-89ef-3a4be0303504"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update teacher",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"teacher_name\": \"dadang edit\",\r\n    \"specialization\": \"geografi\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/teachers/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "teachers", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "d7420563-d18e-404a-89ef-3a4be0303504"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete teacher",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjU3OGUzZS0xMzEyLTRmYzktYmVmOS00OWRmMTg2ZDdkODAiLCJpYXQiOjE3NDAwMTMxNTEsImV4cCI6MTc0MDA5OTU1MX0.0QcsAo4uChPok3rvlGUi-z6KP1wT3czhp-wbjgH3O00",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/teachers/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "teachers", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "d7420563-d18e-404a-89ef-3a4be0303504"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "student",
+      "item": [
+        {
+          "name": "add student",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/students",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "students"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find all student",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/students",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "students"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find student by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/students/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "students", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update student",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"student_name\":\"dadang edit\",\r\n    \"student_grade\":\"10A\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/students/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "students", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "68127f11-7e1d-4661-a785-ba25e8ff888e"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete student",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/students/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "students", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "8eea1108-0aaf-4c4b-847a-e92b8f052590"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "class",
+      "item": [
+        {
+          "name": "add class",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"class_name\":\"geo\",\r\n    \"class_room_number\":\"10A\",\r\n    \"teacher_id\":\"e9aab0a5-97c3-4c27-ba90-59fa768efd5b\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/classes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "classes"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find all class",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/classes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "classes"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find class by id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/classes/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "classes", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "3185468e-4687-499a-bd74-22a1a749e68b"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update class",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"class_name\":\"geografi\",\r\n    \"class_room_number\":\"10A\",\r\n    \"teacher_id\":\"e9aab0a5-97c3-4c27-ba90-59fa768efd5b\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/classes/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "classes", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "3185468e-4687-499a-bd74-22a1a749e68b"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete class",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/classes/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "classes", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "3185468e-4687-499a-bd74-22a1a749e68b"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "subject",
+      "item": [
+        {
+          "name": "add subject and class",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"subject_name\":\"geo\",\r\n    \"description\":\"pelajaran geo\",\r\n    \"classes\":[]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/subjects",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "subjects"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find all subject",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/subjects",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "subjects"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find subject by id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/subjects/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "subjects", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "db384a2f-ac08-4bd2-b422-ea9ff6c3d71f"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updatee subject and class",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"subject_name\":\"geo\",\r\n    \"description\":\"pelajaran geo\",\r\n    \"classes\":[\"a1721aaa-51e6-4219-bbb9-975217f9ac81\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/subjects/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "subjects", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "db384a2f-ac08-4bd2-b422-ea9ff6c3d71f"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete subject and class",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/subjects/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "subjects", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "ae36da99-ea5d-42ef-ab2c-d49c0cfebc91"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "enrollment",
+      "item": [
+        {
+          "name": "new enroll",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"subject_class_id\":\"31ab3171-db8c-4b75-be89-423f5be8e625\",\r\n    \"student_id\":\"a0709114-1232-4dab-b97e-0bc305b19aa2\",\r\n    \"enrollment_date\":\"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/enrollments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "enrollments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find enroll by student",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/enrollments/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "enrollments", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "a0709114-1232-4dab-b97e-0bc305b19aa2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "remove enroll",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMjdjZGJhZS04NDFiLTRiMjQtOWFhNC04ZjRhYTkxN2NmY2QiLCJpYXQiOjE3NDAwNDA4MDAsImV4cCI6MTc0MDEyNzIwMH0.5CR3yBwA9pm_f0PAUlEgtVLxpyxGj2hwoiJxWRg0kzA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/enrollments/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "enrollments", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "7ffec05d-ed12-43da-bd81-22490dd8bc34"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
+```
 
-## Support
+## Authors
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+- [@sutantodadang](https://www.github.com/sutantodadang)
